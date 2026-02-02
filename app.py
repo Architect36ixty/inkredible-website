@@ -43,6 +43,10 @@ def team():
     ]
     return render_template('team.html', team=team_members)
 
+@app.route('/consulting')
+def consulting():
+    return render_template('consulting.html')
+
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':
