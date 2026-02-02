@@ -21,7 +21,17 @@
                 <h2 class="mt-4 text-2xl font-semibold text-inkdark group-hover:text-white text-center">{{ member.name
                     }}</h2>
                 <p class="mt-2 text-inkcyan font-medium">{{ member.role }}</p>
-                <p class="mt-4 text-slate-600 group-hover:text-slate-300 text-center text-sm">{{ member.bio }}</p>
+                <p class="mt-4 text-slate-600 group-hover:text-slate-200 text-center text-sm leading-relaxed">{{
+                    member.bio }}</p>
+
+                <div class="mt-4 flex flex-wrap justify-center gap-2">
+                    {% for skill in member.skills %}
+                    <span
+                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-inkdark group-hover:bg-white/20 group-hover:text-white transition-colors">
+                        {{ skill }}
+                    </span>
+                    {% endfor %}
+                </div>
 
                 <div class="flex mt-6 -mx-2">
                     <a href="#" class="mx-2 text-slate-400 group-hover:text-inkcyan transition-colors"

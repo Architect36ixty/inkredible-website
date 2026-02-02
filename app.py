@@ -36,10 +36,34 @@ def index():
 def team():
     # Placeholder data for the team
     team_members = [
-        {'name': 'Alex Johnson', 'role': 'Lead Architect', 'bio': 'Master of Python and scalable systems.', 'img': 'team_member_1.jpg'},
-        {'name': 'Maria Rodriguez', 'role': 'Frontend Specialist', 'bio': 'Turning complex UIs into smooth experiences.', 'img': 'team_member_2.jpg'},
-        {'name': 'David Kim', 'role': 'Backend Developer', 'bio': 'Database wizard and API expert.', 'img': 'team_member_3.jpg'},
-        {'name': 'Sarah Jenkins', 'role': 'Project Manager', 'bio': 'Keeping projects on track and clients happy.', 'img': 'team_member_4.jpg'},
+        {
+            'name': 'Alex Johnson',
+            'role': 'Lead Architect',
+            'bio': 'With over 15 years in software architecture, Alex specializes in designing fault-tolerant, high-performance distributed systems. He ensures every solution is robust, scalable, and built on solid foundational principles.',
+            'img': 'team_member_1.jpg',
+            'skills': ['System Architecture', 'Python', 'Cloud Infrastructure', 'Microservices']
+        },
+        {
+            'name': 'Maria Rodriguez',
+            'role': 'Frontend Specialist',
+            'bio': 'Maria bridges the gap between design and technology. She crafts pixel-perfect, accessible, and responsive interfaces that delight users, utilizing the latest frontend frameworks.',
+            'img': 'team_member_2.jpg',
+            'skills': ['React & Vue', 'Tailwind CSS', 'UI/UX Design', 'Accessibility']
+        },
+        {
+            'name': 'David Kim',
+            'role': 'Backend Developer',
+            'bio': 'David is the engine room. He optimizes database performance and builds secure, efficient APIs that power our most complex applications, ensuring data integrity and speed.',
+            'img': 'team_member_3.jpg',
+            'skills': ['PostgreSQL', 'FastAPI', 'Security', 'Database Optimization']
+        },
+        {
+            'name': 'Sarah Jenkins',
+            'role': 'Project Manager',
+            'bio': 'Sarah ensures seamless delivery. Her deep technical background allows her to translate complex business requirements into actionable development tasks, ensuring projects ship on time.',
+            'img': 'team_member_4.jpg',
+            'skills': ['Agile/Scrum', 'Technical Planning', 'Client Relations', 'Product Strategy']
+        },
     ]
     return render_template('team.html', team=team_members)
 
