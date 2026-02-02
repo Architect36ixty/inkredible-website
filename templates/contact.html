@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="py-20 bg-white relative overflow-hidden">
+    <div
+        class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-inkcyan opacity-10 rounded-full blur-3xl pointer-events-none">
+    </div>
+    <div
+        class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-inkorange opacity-10 rounded-full blur-3xl pointer-events-none">
+    </div>
+
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-extrabold text-inkdark sm:text-5xl">Get in Touch</h1>
+            <p class="mt-4 text-xl text-slate-600">
+                Have a project in mind? Let's discuss how we can help.
+            </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100">
+            <form action="{{ url_for('contact') }}" method="POST" class="space-y-8">
+                <div class="relative z-0 w-full mb-6 group">
+                    <input type="text" name="name" id="name"
+                        class="block py-2.5 px-0 w-full text-sm text-inkdark bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-inkcyan peer"
+                        placeholder=" " required />
+                    <label for="name"
+                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-inkcyan peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Your
+                        Name</label>
+                </div>
+
+                <div class="relative z-0 w-full mb-6 group">
+                    <input type="email" name="email" id="email"
+                        class="block py-2.5 px-0 w-full text-sm text-inkdark bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-inkcyan peer"
+                        placeholder=" " required />
+                    <label for="email"
+                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-inkcyan peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email
+                        Address</label>
+                </div>
+
+                <div class="relative z-0 w-full mb-6 group">
+                    <textarea name="message" id="message" rows="4"
+                        class="block py-2.5 px-0 w-full text-sm text-inkdark bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-inkcyan peer resize-none"
+                        placeholder=" " required></textarea>
+                    <label for="message"
+                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-inkcyan peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">How
+                        can we help?</label>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit"
+                        class="relative inline-flex items-center justify-start px-10 py-3 overflow-hidden font-bold rounded-full group hover:shadow-xl transition-all ease-out duration-300 border-2 border-inkdark">
+                        <span
+                            class="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-opacity-100 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out z-0 bg-gradient-to-r from-inkorange via-inkyellow to-inkcyan"></span>
+                        <span
+                            class="absolute top-0 left-0 w-full h-full rounded-full -z-10 bg-inkcyan group-hover:bg-opacity-0 transition-all duration-300 ease-out"></span>
+                        <span
+                            class="relative w-full text-white transition-colors duration-300 ease-in-out group-hover:text-inkdark z-10">Send
+                            Message</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

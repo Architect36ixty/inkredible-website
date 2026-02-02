@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-extrabold text-inkdark sm:text-5xl">Meet the Team</h1>
+            <p class="mt-4 max-w-2xl text-xl text-slate-600 lg:mx-auto">
+                The minds behind the code.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
+            {% for member in team %}
+            <div
+                class="flex flex-col items-center p-8 transition-colors duration-300 transform border cursor-pointer rounded-2xl hover:border-transparent group hover:bg-inkdark dark:border-gray-700 dark:hover:border-transparent bg-white shadow-sm hover:shadow-xl">
+                <img class="object-cover w-32 h-32 rounded-full ring-4 ring-slate-100 group-hover:ring-inkcyan transition-all"
+                    src="{{ url_for('static', filename='images/' + member.img) }}" alt="{{ member.name }}"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=Member';">
+
+                <h2 class="mt-4 text-2xl font-semibold text-inkdark group-hover:text-white text-center">{{ member.name
+                    }}</h2>
+                <p class="mt-2 text-inkcyan font-medium">{{ member.role }}</p>
+                <p class="mt-4 text-slate-600 group-hover:text-slate-300 text-center text-sm">{{ member.bio }}</p>
+
+                <div class="flex mt-6 -mx-2">
+                    <a href="#" class="mx-2 text-slate-400 group-hover:text-inkcyan transition-colors"
+                        aria-label="LinkedIn">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M6 9H2V21H6V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

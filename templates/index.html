@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="relative bg-inkdark overflow-hidden">
+    <div
+        class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-inkorange via-inkyellow to-inkcyan">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 relative z-10">
+        <div class="text-center">
+            <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+                <span class="block">Building Incredible</span>
+                <span
+                    class="block text-transparent bg-clip-text bg-gradient-to-r from-inkorange via-inkyellow to-inkcyan">Custom
+                    Software Solutions</span>
+            </h1>
+            <p class="mt-3 max-w-md mx-auto text-base text-slate-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                At Inkredible Text, we turn complex business challenges into elegant, powerful software designed
+                specifically for your needs.
+            </p>
+            <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
+                <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
+                    <a href="{{ url_for('contact') }}"
+                        class="flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-inkdark bg-gradient-to-r from-inkorange via-inkyellow to-inkcyan hover:brightness-110 md:py-4 md:text-lg md:px-10 transition-all shadow-[0_0_15px_rgba(0,160,220,0.5)] hover:shadow-[0_0_30px_rgba(0,160,220,0.8)]">
+                        Get Started
+                    </a>
+                    <a href="#services"
+                        class="flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-inkdark bg-opacity-60 hover:bg-opacity-70 md:py-4 md:text-lg md:px-10 backdrop-blur-sm border-slate-600">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center mb-16">
+            <h2 class="text-base text-inkcyan font-semibold tracking-wide uppercase">Our Expertise</h2>
+            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-inkdark sm:text-4xl">
+                Tailored Technology for Your Business
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div
+                class="p-6 bg-slate-50 rounded-2xl border-b-4 border-inkorange shadow-md hover:shadow-xl transition-shadow">
+                <div class="text-inkorange mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-inkdark mb-2">Custom Development</h3>
+                <p class="text-slate-600">We build robust solutions from scratch, ensuring every feature aligns
+                    perfectly with your workflow.</p>
+            </div>
+            <div
+                class="p-6 bg-slate-50 rounded-2xl border-b-4 border-inkyellow shadow-md hover:shadow-xl transition-shadow">
+                <div class="text-inkyellow mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-inkdark mb-2">API Integration</h3>
+                <p class="text-slate-600">Seamlessly connect your existing systems and third-party services for unified
+                    operations.</p>
+            </div>
+            <div
+                class="p-6 bg-slate-50 rounded-2xl border-b-4 border-inkcyan shadow-md hover:shadow-xl transition-shadow">
+                <div class="text-inkcyan mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-inkdark mb-2">Secure & Scalable</h3>
+                <p class="text-slate-600">Built with security best practices and designed to grow alongside your
+                    business.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-24 bg-inkdark relative overflow-hidden">
+    <!-- Background Atmospheric Effects -->
+    <div
+        class="absolute top-0 left-0 w-96 h-96 bg-inkcyan opacity-10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2">
+    </div>
+    <div
+        class="absolute bottom-0 right-0 w-96 h-96 bg-inkorange opacity-10 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2">
+    </div>
+
+    <!-- Grid Pattern Overlay -->
+    <div
+        class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'#ffffff\' fill-opacity=\'0.03\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-10">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="lg:text-center mb-16">
+            <h2 class="text-base text-inkyellow font-semibold tracking-wide uppercase">Future-Ready Technology</h2>
+            <p class="mt-2 text-3xl leading-8 font-extrabold text-white sm:text-4xl">
+                AI-Powered Innovation
+            </p>
+            <p class="mt-4 max-w-2xl text-xl text-slate-300 lg:mx-auto">
+                Harnessing the power of advanced models for smarter business outcomes.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <!-- Feature 1: AI Applications -->
+            <div
+                class="relative group p-8 bg-slate-800/50 backdrop-blur-lg rounded-3xl border border-slate-700/50 hover:border-inkcyan/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,160,220,0.15)]">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-inkcyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl">
+                </div>
+                <div class="relative z-10">
+                    <div
+                        class="flex items-center justify-center h-14 w-14 rounded-2xl bg-gradient-to-br from-inkcyan to-blue-600 text-white mb-6 shadow-lg shadow-inkcyan/20 group-hover:scale-110 transition-transform duration-300">
+                        <!-- Brain/AI Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Advanced AI Applications</h3>
+                    <p class="text-slate-300 leading-relaxed">
+                        We build intelligent applications on top of the industry's most capable models (LLMs). From
+                        natural language processing to complex data synthesis, our tools understand context and intent
+                        like never before, unlocking new possibilities for automation and insight.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 2: Seamless Integration -->
+            <div
+                class="relative group p-8 bg-slate-800/50 backdrop-blur-lg rounded-3xl border border-slate-700/50 hover:border-inkorange/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(244,123,32,0.15)]">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-inkorange/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl">
+                </div>
+                <div class="relative z-10">
+                    <div
+                        class="flex items-center justify-center h-14 w-14 rounded-2xl bg-gradient-to-br from-inkorange to-red-500 text-white mb-6 shadow-lg shadow-inkorange/20 group-hover:scale-110 transition-transform duration-300">
+                        <!-- Integration/Flow Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Seamless Process Integration</h3>
+                    <p class="text-slate-300 leading-relaxed">
+                        Don't just add AI; integrate it. We embed predictive power directly into your existing
+                        workflows. No friction, just smarter automated decisions and predictive analytics surfacing
+                        insights exactly where your team needs them.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

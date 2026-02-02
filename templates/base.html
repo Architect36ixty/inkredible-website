@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inkredible Text - Custom Software Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            inkdark: '#0F1F38',
+            inkorange: '#F47B20',
+            inkyellow: '#FEEA00',
+            inkcyan: '#00A0DC',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Custom UIverse inspired scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0F1F38;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #F47B20, #FEEA00, #00A0DC);
+      border-radius: 5px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-inkdark flex flex-col min-h-screen">
+
+  <nav class="bg-white shadow-md fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-56">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="{{ url_for('index') }}">
+            <img class="h-52 w-auto" src="{{ url_for('static', filename='images/logo.png') }}"
+              alt="Inkredible Text Logo">
+          </a>
+        </div>
+        <div class="flex items-center space-x-8">
+          <a href="{{ url_for('index') }}"
+            class="text-inkdark hover:text-inkcyan px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+          <a href="{{ url_for('team') }}"
+            class="text-inkdark hover:text-inkcyan px-3 py-2 rounded-md text-sm font-medium transition-colors">Meet the
+            Team</a>
+          <a href="{{ url_for('contact') }}"
+            class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-inkdark rounded-lg group bg-gradient-to-br from-inkorange via-inkyellow to-inkcyan group-hover:from-inkorange group-hover:via-inkyellow group-hover:to-inkcyan hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300">
+            <span
+              class="relative px-5 py-2 transition-all ease-in duration-75 bg-white dark:bg-inkdark rounded-md group-hover:bg-opacity-0">
+              Contact Us
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow pt-56">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="max-w-4xl mx-auto mt-4 px-4">
+      {% for category, message in messages %}
+      <div
+        class="p-4 mb-4 text-sm rounded-lg {% if category == 'success' %}bg-green-100 text-green-700{% else %}bg-red-100 text-red-700{% endif %}"
+        role="alert">
+        {{ message }}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="bg-inkdark text-white py-6 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-lg font-semibold mb-2">Inkredible Text Pty Ltd {{ now.strftime('%d/%m/%Y') }}</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
