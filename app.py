@@ -5,7 +5,8 @@ import os
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
-load_dotenv()
+basedir = os.path.abspath(os.path.dirname(__file__))
+load_dotenv(os.path.join(basedir, '.env'))
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'default_unsafe_key_for_dev')
@@ -71,8 +72,27 @@ def team():
 def consulting():
     return render_template('consulting.html')
 
+@app.route('/software/business')
+def business():
+    return render_template('business.html')
+
+@app.route('/software/science')
+def science():
+    return render_template('science.html')
+
+@app.route('/software/robotics')
+def robotics():
+    return render_template('robotics.html')
+
+@app.route('/software/government')
+def government():
+    return render_template('government.html')
+
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
+    # Get the recipient from config or environment
+    recipient = app.config.get('MAIL_USERNAME')
+    
     if request.method == 'POST':
         name = request.form.get('name')
         email = request.form.get('email')
@@ -82,22 +102,27 @@ def contact():
             flash('Please fill in all fields.', 'error')
             return redirect(url_for('contact'))
 
-        msg = Message(subject=f"New Inquiry from {name} via Inkredible Website",
-                      recipients=[MAIL_RECIPIENT])
-        msg.body = f"""
+        if not recipient:
+            print("Error: MAIL_USERNAME not set in environment.")
+            flash('System configuration error. Please try again later.', 'error')
+            return redirect(url_for('contact'))
+
+        try:
+            msg = Message(subject=f"New Inquiry from {name} via Inkredible Website",
+                          recipients=[recipient])
+            msg.body = f"""
 Name: {name}
 Email: {email}
 
 Message:
 {message_body}
-        """
-        try:
+            """
             mail.send(msg)
             flash('Your message has been sent successfully!', 'success')
             return redirect(url_for('contact'))
         except Exception as e:
             print(f"Error sending email: {e}")
-            flash('There was an error sending your message. Please try again later.', 'error')
+            flash(f'There was an error sending your message: {str(e)}', 'error')
             return redirect(url_for('contact'))
 
     return render_template('contact.html')

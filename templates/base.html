@@ -59,6 +59,41 @@
         <div class="flex items-center space-x-8">
           <a href="{{ url_for('index') }}"
             class="text-inkdark hover:text-inkcyan px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+
+          <!-- Software Dropdown -->
+          <div class="relative group">
+            <button
+              class="flex items-center text-inkdark hover:text-inkcyan px-3 py-2 rounded-md text-sm font-medium transition-colors focus:outline-none">
+              Software
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div
+              class="absolute left-0 mt-0 w-56 bg-white rounded-xl shadow-2xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform origin-top border border-slate-100">
+              <a href="{{ url_for('business') }}"
+                class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-inkorange transition-colors">
+                <span class="font-bold block">Business</span>
+                <span class="text-xs text-slate-400">Enterprise Apps & Solutions</span>
+              </a>
+              <a href="{{ url_for('science') }}"
+                class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-inkcyan transition-colors border-t border-slate-50">
+                <span class="font-bold block">Science</span>
+                <span class="text-xs text-slate-400">Scientific Research Tools</span>
+              </a>
+              <a href="{{ url_for('robotics') }}"
+                class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-inkdark transition-colors border-t border-slate-50">
+                <span class="font-bold block">Robotics Research</span>
+                <span class="text-xs text-slate-400">Elderly Care & Modern Labor</span>
+              </a>
+              <a href="{{ url_for('government') }}"
+                class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-slate-900 transition-colors border-t border-slate-50">
+                <span class="font-bold block">Government</span>
+                <span class="text-xs text-slate-400">Municipal & Civic Solutions</span>
+              </a>
+            </div>
+          </div>
+
           <a href="{{ url_for('consulting') }}"
             class="text-inkdark hover:text-inkcyan px-3 py-2 rounded-md text-sm font-medium transition-colors">Consulting</a>
           <a href="{{ url_for('team') }}"
