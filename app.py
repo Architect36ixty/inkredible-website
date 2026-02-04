@@ -37,9 +37,9 @@ def team():
     # Placeholder data for the team
     team_members = [
         {
-            'name': 'Alex Johnson',
-            'role': 'Lead Architect',
-            'bio': 'With over 15 years in software architecture, Alex specializes in designing fault-tolerant, high-performance distributed systems. He ensures every solution is robust, scalable, and built on solid foundational principles.',
+            'name': 'Katlego Rankhumise',
+            'role': 'CEO & Lead Architect',
+            'bio': 'With over 15 years in software architecture, Katlego specializes in designing fault-tolerant, high-performance distributed systems. He ensures every solution is robust, scalable, and built on solid foundational principles.',
             'img': 'team_member_1.jpg',
             'skills': ['System Architecture', 'Python', 'Cloud Infrastructure', 'Microservices']
         },
